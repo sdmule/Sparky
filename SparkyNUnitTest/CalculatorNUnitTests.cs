@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using NUnit.Framework.Legacy;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -18,7 +19,7 @@ namespace Sparky
             int result = calc.AddNumbers(10, 20);
 
             //Assert - In this we check the result is as expected.
-            Assert.AreEqual(30, result);
+            ClassicAssert.AreEqual(30, result); 
         }
     }
 }
