@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Sparky/Sparky.csproj" />
   <Project Path="SparkyMSTest/SparkyMSTest.csproj" Id="45795a6c-5b46-4efb-863f-7207d381ebc0" />
+  <Project Path="SparkyNUnitTest/SparkyNUnitTest.csproj" Id="2067c5e0-eaeb-4eda-8817-ddc1d3ea6ac7" />
 </Solution>
