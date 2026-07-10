@@ -44,15 +44,32 @@ namespace Sparky
             //ClassicAssert.IsFalse(isOdd); -------> Here are another ways and output of all ways will be same.
         }
 
+        //[Test]
+        //public void IsOddChecker_InputOddNumber_ReturnTrue()
+        //{
+        //    Calculator calculator = new();
+
+        //    bool isOdd = calculator.IsOddNumber(11);
+
+        //    ClassicAssert.That(isOdd, Is.EqualTo(true));
+        //    //ClassicAssert.IsTrue(isOdd); //Here are another ways and output of all ways will be same.
+        //}
+
+
+        //If we have to test multiple values then below is the way using "[TestCase]"
         [Test]
-        public void IsOddChecker_InputOddNumber_ReturnTrue()
+        [TestCase(11)]
+        [TestCase(13)]
+        //Here if we have multiple parameters in method then use comma to separate that and pass it
+        //e.g. - [TestCase(11, 12)] // If we have two parameters for the method
+        public void IsOddChecker_InputOddNumber_ReturnTrue(int a)
         {
             Calculator calculator = new();
 
-            bool isOdd = calculator.IsOddNumber(11);
+            bool isOdd = calculator.IsOddNumber(a);
 
             ClassicAssert.That(isOdd, Is.EqualTo(true));
-            //ClassicAssert.IsTrue(isOdd); //Here are another ways and output of all ways will be same.
+            ClassicAssert.IsTrue(isOdd);
         }
     }
 }
