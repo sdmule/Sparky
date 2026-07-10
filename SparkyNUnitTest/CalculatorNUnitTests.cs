@@ -10,7 +10,7 @@ namespace Sparky
     public class CalculatorNUnitTests
     {
         [Test]
-        public void AddNumbers_InputTwoInt_GetCorrectAddition()//Test method names are long as we have to use it in descriptive manner 
+        public void AddNumbers_InputTwoInt_GetCorrectAddition()//Test method names are long as we have to use it in descriptive manner //Long descriptive names are good in Unit Testing
         {
             //Arrange  - means we have to do the initializations
             Calculator calc = new();
@@ -70,6 +70,15 @@ namespace Sparky
 
             ClassicAssert.That(isOdd, Is.EqualTo(true));
             ClassicAssert.IsTrue(isOdd);
+        }
+
+        [Test]
+        [TestCase(10, ExpectedResult = false)]
+        [TestCase(11, ExpectedResult = true)]
+        public bool IsOddChecker_InputNumber_ReturnTrueIfOdd(int a)// Here the method return type is bool(not void) because in TestCase we have used ExpectedResult parameter
+        {
+            Calculator calculator = new();
+            return calculator.IsOddNumber(a);
         }
     }
 }
