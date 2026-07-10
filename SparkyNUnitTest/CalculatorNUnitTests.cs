@@ -19,7 +19,40 @@ namespace Sparky
             int result = calc.AddNumbers(10, 20);
 
             //Assert - In this we check the result is as expected.
-            ClassicAssert.AreEqual(30, result); 
+            ClassicAssert.AreEqual(30, result);
+        }
+
+        //Below method is my first try to write Unit Test on first assignment, some improvements were there but I learned and I am happy for that 
+        //[Test]
+        //public void CheckOddNumbers_InputOneInt_IsOddNumber()
+        //{
+        //    Calculator calc = new();
+
+        //    bool result = calc.CheckOddNumbers(3);
+
+        //    ClassicAssert.AreEqual(true, result);
+        //}
+
+        [Test]
+        public void IsOddChecker_InputEvenNumber_ReturnFalse()
+        {
+            Calculator calculator = new();
+
+            bool isOdd = calculator.IsOddNumber(10);
+
+            ClassicAssert.That(isOdd, Is.EqualTo(false));
+            //ClassicAssert.IsFalse(isOdd); -------> Here are another ways and output of all ways will be same.
+        }
+
+        [Test]
+        public void IsOddChecker_InputOddNumber_ReturnTrue()
+        {
+            Calculator calculator = new();
+
+            bool isOdd = calculator.IsOddNumber(11);
+
+            ClassicAssert.That(isOdd, Is.EqualTo(true));
+            //ClassicAssert.IsTrue(isOdd); //Here are another ways and output of all ways will be same.
         }
     }
 }
